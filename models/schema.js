@@ -10,6 +10,6 @@ const movieSchema = new mongoose.Schema({
     moviePlot : String
   });
 
-const Movies = mongoose.model("movie", movieSchema);
+const Movies = mongoose.model("movies", movieSchema);
 
 module.exports = { Movies };
