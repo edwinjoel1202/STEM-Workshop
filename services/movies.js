@@ -1,6 +1,11 @@
+const { Movies } = require("../models/schema");
 const getAllMovies = async () => {
-  console.log("getAllMovies");
-  return "Get all movies";
+  try {
+    const movies = await Movies.find();
+    return movies;
+  } catch (e) {
+    throw e;
+  }
 };
 
 const getMovieById = async (movieId) => {
