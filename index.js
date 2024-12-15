@@ -1,6 +1,7 @@
 const express = require("express");
 const authRoutes = require("./routers/authRoutes");
 const moviesRoutes = require("./routers/moviesRoutes");
+const cors = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { logRequest } = require("./middleware/logger");
@@ -28,6 +29,8 @@ app.use((error, req, res, next) => {
     });
   }
 });
+
+app.use(cors());
 
   mongoose
   .connect("mongodb://localhost:27017/MovieBuffet")
